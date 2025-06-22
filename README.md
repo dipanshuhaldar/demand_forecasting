@@ -57,5 +57,53 @@ Approached to real life Demand Forecasting scenarios, with varying volume lined 
     └── plots.py                <- Code to create visualizations
 ```
 
---------
+## ⏳ Time Series Forecasting Approach
 
+This repository applies time series forecasting to model and predict demand, with real-world considerations like:
+
+- 📈 **Seasonality and Trends:** Weekly/monthly cycles, upward/downward long-term movements.
+- 🎯 **Anomalies and Events:** Spikes due to marketing campaigns, outages, product releases, etc.
+- 🔧 **Preprocessing:** 
+  - Time indexing and resampling.
+  - Holiday/event feature engineering.
+  - Lag features, rolling stats, and Fourier terms.
+
+## 🔍 Models Explored
+
+| Model                  | Highlights                                       |
+|------------------------|--------------------------------------------------|
+| `ARIMA`               | Classical baseline for trend + seasonality       |
+| `Prophet`             | Handles holidays and multiple seasonalities      |
+| `XGBoost / LightGBM`  | Tree-based regressors on lag features            |
+| `LSTM`                | Deep learning model for sequential patterns      |
+| `Ensembles`           | Weighted average or stacking across models       |
+
+## 📊 Evaluation Metrics
+
+- **MAE (Mean Absolute Error)**
+- **RMSE (Root Mean Squared Error)**
+- **MAPE (Mean Absolute Percentage Error)**
+
+## 📁 Example Notebooks
+
+- `notebooks/1.0-ed-data-overview.ipynb`: Data structure and EDA.
+- `notebooks/2.0-ts-trend-seasonality.ipynb`: Decomposition and visualization.
+- `notebooks/3.0-arima-prophet-models.ipynb`: Baseline statistical models.
+- `notebooks/4.0-xgb-lstm.ipynb`: ML and DL-based forecasting.
+
+## 🧠 Forecasting Tips
+
+> Good forecasts are interpretable, robust to anomalies, and regularly retrained with new data.
+
+## ✅ Run Forecasting Pipeline
+
+```bash
+make data       # Fetch and preprocess data
+make features   # Generate time series features
+make train      # Train the forecasting models
+make predict    # Run prediction on future periods
+```
+
+---
+
+Happy Forecasting! 🎯📈
